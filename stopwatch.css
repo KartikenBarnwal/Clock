@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url('https://cdn3.vectorstock.com/i/1000x1000/96/52/abstract-neon-lights-background-vector-21999652.jpg');
+    background-size: cover;
+    max-width: 1200px;
+    margin: auto;
+}
+ul{
+    list-style-type:none;
+    margin-top: 20px;
+    text-align: center;
+}
+ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+ul li a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #ef1de7;
+    background-color: #35063e;
+    font-size: 4rem;
+    border: 2px dashed #ef1de7; 
+    transition: 0.6s ease;
+    padding: 10px;  
+}
+ul li a:hover{
+    background-color: snow;
+}
+.activated{
+    background-color: snow;
+}
+
+/* above css is common ... */
+
+#container{
+    transform: translate(65%,40%);
+    background-color:#35063e;
+    border: solid 2px  black;
+    width: 500px;
+    height: 200px;
+}
+#container #time{
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 10%;
+    color: snow;
+    font-size: 4rem;
+}
+#buttondiv{
+    transform: translate(28.7%,76%); 
+    
+}
+#buttondiv button{
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 3rem;
+    border:solid 2px black;
+    border-radius: 30px;
+    padding: 10px 10px;
+}
+#buttondiv #start:focus,#stop:focus{
+    outline: none;
+    color: snow;
+    background-color: black;
+}
+#reset{
+    outline: none;
+}
+#buttondiv #reset:active{
+    color: snow;
+    background-color: black;
+}

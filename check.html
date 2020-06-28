@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alarm</title>
+    <link rel="icon" href="https://lh3.googleusercontent.com/a-/AOh14GhOePmZG8g0wja3nBL_o7igPEyY8svB8UQuXjC4Gg=s120-cc-rg" type="image/icon type">
+    <link rel="stylesheet" href="alarm.css">
+    
+    
+</head>
+<body>
+    <ul>    
+        <li><a href="stopwatch.html">Stopwatch</a></li>
+        <li><a href="#" class="activated">Alarm</a></li>
+        <li><a href="#">Timer</a></li>
+    </ul>
+    <div class="container" id="container">
+        <div class="txt">
+            <h1>hr</h1>
+            <h1>min</h1>
+            <h1 id="shrink">am/pm</h1>
+        </div>
+        <div class="time">
+            <input type="number" id="hr" required max="12" min="0">
+            <input type="number" id="min" required max="59" min="0">
+            <select class="select-css" id="select-css">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+            </select>
+        </div>
+        <div class="switchbtn">
+            <button id="off" onclick="off()">Off</button>
+            <button id="on" onclick="on()">On</button>
+        </div>
+    </div>
+    <audio src="alarm.mp3" id="alarm" type="audio/mpeg"></audio>
+    <div id="value"></div>
+</body>
+    <script>
+        var id=0;
+        function ring()
+        {
+            document.getElementById("alarm").play();
+        }
+        function off()
+        {
+            document.getElementById('off').style.opacity="1";
+            document.getElementById('on').style.opacity="0";
+            document.getElementById('container').style.borderColor="#a2171d";
+            document.getElementById("alarm").pause();
+        }
+        function on()
+        {
+            document.getElementById('off').style.opacity="0";
+            document.getElementById('on').style.opacity="1";
+            document.getElementById('container').style.borderColor="#1b03a3";
+            id=setInterval(checktime,1000);
+        }
+        function checktime(){
+            var d = new Date();
+            var hr=d.getHours();
+            var min=d.getMinutes();
+            var hr2=document.getElementById("hr").value;
+            var min2=document.getElementById("min").value;
+            var sec=d.getSeconds();
+            
+            var select=document.getElementById("select-css"); 
+
+            if(select.selectedIndex!=0)
+            {
+                hr2=parseInt(hr2);
+                hr2=hr2+12;
+            } 
+            if(hr==hr2 && min==min2)
+            {ring();clearInterval(id);}
+        }
+        
+    </script>
+</html>
