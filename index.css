@@ -1,14 +1,41 @@
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background-color:#091921;
 }
+ul{
+    list-style-type:none;
+    margin-top: 7%;
+    text-align: center;
+    display: flex;
+}
+ul li{
+    flex-grow: 1;
+}
+ul li a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #091921;
+    background-color: #ff105e;
+    font-size: 4rem;
+    border-radius: 10px;
+    transition: 0.6s ease;
+    padding: 10px;  
+}
+ul li a:hover{
+    background-color: snow;
+}
+.activated{
+    background-color: snow;
+}
+
+/* above css is common ... */
+
 .clock{
-    width: 60vh;
-    height: 60vh;
+    margin: 15vw auto;
+    width: 55vh;
+    height: 55vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,6 +72,7 @@ body {
 .clock .sec .sc{
     width: 25vh;
     height: 25vh;
+    transition: 0.6s ease;
 }
 .hr, .mn, .sc{
     display: flex;

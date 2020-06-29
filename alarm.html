@@ -11,7 +11,7 @@
         {
             document.getElementById('off').style.opacity="0";
             document.getElementById('on').style.opacity="1";
-            document.getElementById('container').style.borderColor="#1b03a3";
+            document.getElementById('container').style.borderColor="#fffafa";
             var d=new Date();
             // var hr=d.getHours();
             // var min=d.getMinutes();
@@ -47,7 +47,7 @@
         {
             document.getElementById('off').style.opacity="1";
             document.getElementById('on').style.opacity="0";
-            document.getElementById('container').style.borderColor="#a2171d";
+            document.getElementById('container').style.borderColor="#ff105e";
             document.getElementById("alarm").pause();
         }
         
@@ -56,9 +56,9 @@
 </head>
 <body>
     <ul>    
+        <li><a href="index.html">Analog</a></li>
         <li><a href="stopwatch.html">Stopwatch</a></li>
-        <li><a href="#" class="activated">Alarm</a></li>
-        <li><a href="#">Timer</a></li>
+        <li><a href="alarm.html" class="activated">Alarm</a></li>
     </ul>
     <div class="container" id="container">
         <div class="txt">

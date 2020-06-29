@@ -1,30 +1,26 @@
-*{
-    padding: 0;
-    margin: 0;
-}
 body{
-    background-image: url('https://cdn3.vectorstock.com/i/1000x1000/96/52/abstract-neon-lights-background-vector-21999652.jpg');
-    background-size: cover;
-    max-width: 1200px;
-    margin: auto;
+    margin: 0;
+    min-height: 100vh;
+    background-color:#091921;
 }
 ul{
     list-style-type:none;
-    margin-top: 20px;
+    margin-top: 7%;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 ul li{
-    display: inline-block;
-    margin-left: 30px;
+    flex-grow: 1;
 }
 ul li a{
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: #ef1de7;
-    background-color: #35063e;
+    color: #091921;
+    background-color: #ff105e;
     font-size: 4rem;
-    border: 2px dashed #ef1de7; 
+    border-radius: 10px;
     transition: 0.6s ease;
     padding: 10px;  
 }
@@ -38,40 +34,44 @@ ul li a:hover{
 /* above css is common ... */
 
 .container{
-    transform: translate(65%,40%);
-    background-color:#35063e;
-    border: solid 2px #a2171d;
-    width: 500px;
-    height: 200px;
+    position: relative;
+    margin: 20vh auto;
+    background-color:#091921;
+    border: 4px solid #ff105e;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    box-shadow: 0 0 28px rgba(255,255,255,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    width: 75vw;
+    height: 50vh;
 }
 .container .txt{
     display: flex;
     width: 500px;
 }
 .container .txt h1{
-    margin: 0 auto;
+    position: absolute;
     color: snow;
 }
 .container .time{
-    display: flex;
-    margin-top: 5%;
+    margin: 20px auto;
+    /* background-color: snow; */
 }
 .container .time input{
-    padding: 0;
-    margin: 0 26px;
-    height: 80px;
-    background-color: black;
-    color: snow;
+    margin: 0 3vw;
+    width: 20vw;
+    height: 20vw;
+    background-color: snow;
+    color: #091921;
     outline: none;
     border: solid 1px snow;
     border-radius: 10px;
-    font-size: x-large;
+    font-size: 3.5rem;
     text-align: center;
 }
 .container .time .select-css{
-    margin-left: 55px;
-    width: 100px;
-    height: 50px;
+    width: 15vw;
+    height: 15vw;
+    font-size: 1.5rem;
     background-color: black;
     color: snow;
     border: solid 1px snow;
@@ -82,12 +82,14 @@ ul li a:hover{
 
 }
 .container .switchbtn{
-    transform: translate(403px,26px);
+    position: absolute;
+    bottom: -20px;
+    left: 30%;
     background-color: black;
-    width: 100px;
+    width: 40%;
     border: solid 1px black;
     border-radius: 20px;
-    height: 50px;
+    height: 15%;
     display: flex;
     overflow: hidden;
 }
@@ -97,9 +99,10 @@ ul li a:hover{
     outline: none;
     transition: ease 0.5s;
     cursor: pointer;
+    font-size: 3rem;
 }
 #off{
-    background-color: #ff0000;
+    background-color: #f80757;
 }
 #on{
     background-color: #0a7eff;

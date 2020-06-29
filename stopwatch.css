@@ -1,30 +1,26 @@
-*{
-    padding: 0;
-    margin: 0;
-}
 body{
-    background-image: url('https://cdn3.vectorstock.com/i/1000x1000/96/52/abstract-neon-lights-background-vector-21999652.jpg');
-    background-size: cover;
-    max-width: 1200px;
-    margin: auto;
+    margin: 0;
+    min-height: 100vh;
+    background-color:#091921;
 }
 ul{
     list-style-type:none;
-    margin-top: 20px;
+    margin-top: 7%;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 ul li{
-    display: inline-block;
-    margin-left: 30px;
+    flex-grow: 1;
 }
 ul li a{
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    color: #ef1de7;
-    background-color: #35063e;
+    color: #091921;
+    background-color: #ff105e;
     font-size: 4rem;
-    border: 2px dashed #ef1de7; 
+    border-radius: 10px;
     transition: 0.6s ease;
     padding: 10px;  
 }
@@ -38,40 +34,50 @@ ul li a:hover{
 /* above css is common ... */
 
 #container{
-    transform: translate(65%,40%);
-    background-color:#35063e;
-    border: solid 2px  black;
-    width: 500px;
-    height: 200px;
+    margin: 15vh auto;
+    background-color: #091921;
+    border: 4px solid #93b0be;
+    border-radius: 50%;
+    box-shadow: 0 0 28px rgba(255,255,255,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    width: 60vw;
+    height: 25vw;
 }
 #container #time{
     text-align: center;
     letter-spacing: 5px;
-    margin-top: 10%;
+    margin-top: 12%;
     color: snow;
-    font-size: 4rem;
+    font-size: 6rem;
 }
 #buttondiv{
-    transform: translate(28.7%,76%); 
-    
+    margin: 0vw 10vw;
+    display: flex;
 }
 #buttondiv button{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    flex-grow: 1;
+    margin-left: 20px;
     letter-spacing: 5px;
     text-align: center;
     font-size: 3rem;
-    border:solid 2px black;
-    border-radius: 30px;
-    padding: 10px 10px;
+    border:none;
+    border-bottom: 2px solid #46a2cf;
+    box-shadow: 0 0 28px rgba(255,255,255,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 100px;
+    padding: 5% 5%;
+    color: snow;
+    background-color: #091921;
 }
 #buttondiv #start:focus,#stop:focus{
     outline: none;
-    color: snow;
-    background-color: black;
+    color: #091921;
+    background-color: snow;
 }
 #reset{
     outline: none;
 }
 #buttondiv #reset:active{
-    color: snow;
-    background-color: black;
+    color: #091921;
+    background-color: snow;
 }
