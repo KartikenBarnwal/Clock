@@ -35,65 +35,58 @@ ul li a:hover{
 
 .container{
     position: relative;
-    margin: 20vh auto;
-    background-color:#091921;
+    margin: 20% auto;
+    background-color: #091921;
     border: 4px solid #ff105e;
-    font-family: 'Courier New', Courier, monospace;
-    border-radius: 10px;
+    border-radius: 50%;
     box-shadow: 0 0 28px rgba(255,255,255,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    width: 75vw;
-    height: 50vh;
+    width: 60vw;
+    height: 25vw;
 }
-.container .txt{
-    display: flex;
-    width: 500px;
-}
-.container .txt h1{
-    position: absolute;
-    color: snow;
-}
-.container .time{
-    margin: 20px auto;
-    /* background-color: snow; */
-}
-.container .time input{
-    margin: 0 3vw;
-    width: 20vw;
-    height: 20vw;
-    background-color: snow;
-    color: #091921;
-    outline: none;
-    border: solid 1px snow;
-    border-radius: 10px;
-    font-size: 3.5rem;
+input{
     text-align: center;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
 }
-.container .time .select-css{
-    width: 15vw;
-    height: 15vw;
-    font-size: 1.5rem;
-    background-color: black;
-    color: snow;
-    border: solid 1px snow;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    padding: 10px;
-
-}
-.container .switchbtn{
+#hr{
     position: absolute;
-    bottom: -20px;
-    left: 30%;
+    top: 22%;
+    left: 25%;
+    width: 20%;
+    height: 30%;
+   background-color: snow; 
+}
+#min{
+    position: absolute;
+    top: 22%;
+    right: 25%;
+    width: 20%;
+    height: 30%;
+   background-color: snow; 
+}
+#sleep{
+    position: absolute;
+    bottom: -5%;
+    left: 15vw;
+}
+#wake{
+    position: absolute;
+    bottom: 12%;
+    left: 2vw;
+    transition: .6s ease;
+}
+.switchbtn{
+    margin: 30% auto;
     background-color: black;
-    width: 40%;
+    height: 60px;
+    width: 150px;
     border: solid 1px black;
-    border-radius: 20px;
-    height: 15%;
+    border-radius: 20%;
     display: flex;
     overflow: hidden;
 }
-.container .switchbtn button{
+.switchbtn button{
     flex-grow: 1;
     border: none;
     outline: none;
