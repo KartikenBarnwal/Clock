@@ -1,0 +1,12 @@
+var operators = [{
+        sign: "+",
+        method: function(a,b){ return a + b; }
+    },{
+        sign: "-",
+        method: function(a,b){ return a - b; }
+    }];
+
+var selectedOperator = Math.floor(Math.random()*operators.length);
+
+operators[selectedOperator].sign                  //this will give you the sign
+operators[selectedOperator].method(rnum1, rnum2)  //this will give you the answer
