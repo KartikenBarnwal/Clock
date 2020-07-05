@@ -132,7 +132,7 @@ input{
     outline-offset: -10px;
     border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #ff105e;
+    background-color: snow;
     color: #091921;
     text-align: center;
 }
@@ -141,14 +141,21 @@ input{
     width: 20vw;
     height: 10vw;
     border-radius: 10px;
+    background-color: snow;
+    border-color: #f80757;
 }
 .setlevel select{
     font-size: 2rem;
+    text-transform: uppercase;
+    padding: 10px;
 }
 .setlevel h1{
     font-size: 2.5rem;
     border-bottom: solid 1px #091921;
     margin-top: 10%;
+}
+.setlevel marquee{
+    font-size: 3rem;
 }
 #check{
     font-family: 'Courier New', Courier, monospace;
@@ -156,9 +163,9 @@ input{
     margin-top: 5%;
     font-size: 2.5rem;
     text-decoration: none;
-    background-color: snow;
+    background-color: #091921;
     padding: 1%;
-    color: #091921;
+    color: snow;
     border-radius: 10px;
 }
 
@@ -194,18 +201,15 @@ input{
 }
 .popup .question input{
     width: 20vw;
-    height: 5vh;
+    height: 7vw;
 }
-.popup .question img{
+.popup img{
     position: absolute;
     width: 20%;
     top: 14%;
     left: 5%;
 }
 .popup button{
-    position: absolute;
-    top: 70%;
-    left: 40%;
     width: 20vw;
     height: 5vh;
     background-color: #ffe710;

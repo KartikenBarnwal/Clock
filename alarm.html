@@ -38,27 +38,30 @@
         <div class="setlevel">
             <h1>Level of Difficulty </h1>
             <select name="" id="" id="level">
-                <option value="">Noob</option>
-                <option value="">Normal</option>
-                <option value="">Challenging</option>
+                <option value="noob">Noob</option>
+                <option value="normal">Normal</option>
+                <option value="challenging">Challenging</option>
             </select>
             <h1>Number of Questions </h1>
             <input type="text" max="10" min="2" value="3" id="numOfQues">
             <br><br>
-            <button id="check">Check Sample Questions</button>
+            <button id="check" onclick="demo()">Check Sample Questions</button>
+            <marquee behavior="" direction="" id="noob" style="display: none;"><pre>12+75  85*40  45/6  9-27</pre></marquee>
+            <marquee behavior="" direction="" id="normal" style="display: none;"><pre>123+75  851*40  45/600  999-27</pre></marquee>
+            <marquee behavior="" direction="" id="challenging" style="display: none;"><pre>1234+751  8532*401  4532/61  923-247</pre></marquee>
         </div>
     </div>
 
-    <div class="popup" id="popup" style="visibility: hidden;">
+    <div class="popup" id="popup" style="visibility:hidden;">
         <h1>Good Morning Dude!</h1>
         <div class="question">
             <p>
             <span id="snum">1.</span><br><br>
-            <span id="num1">74</span> + <span id="num2">10</span></p>
-            <input type="text" id="ans">
+            <span id="num1">74</span><span id="sign"> + </span><span id="num2">10</span></p>
+            <input type="text" id="ans" autocomplete="off">
             <button onclick="checkAnswer()">Next</button>
-            <img src="point.png" alt="">
         </div>
+        <img src="point.png" alt="">
     </div>
 
     <!-- <img src="sleep.png" alt="sleeping boy" id="sleep">
@@ -80,6 +83,27 @@
         var level = document.getElementById('level')
         var snum = document.getElementById('snum')
     
+        var operators=[
+            {
+                sign:'+',
+                ans(a,b){return a+b}
+            },
+            {
+                sign:'-',
+                ans(a,b){return a-b}
+            },
+            {
+                sign:'×',
+                ans(a,b){return a*b}
+            },
+            {
+                sign:'÷',
+                ans(a,b){return parseInt(a/b)}
+            }
+        ]
+        var selectedOperator = Math.floor(Math.random()*operators.length);
+
+    
         function on()
         {
             var hr = Number(document.getElementById('hr').value);
@@ -88,11 +112,11 @@
             var alarmTime = new Date(toDay.getUTCFullYear(),toDay.getUTCMonth(),toDay.getUTCDate(),hr,min);
             var differenceInMs = alarmTime.getTime() - (new Date()).getTime();
             console.log(differenceInMs);
-            if(differenceInMs<0)
-            {
-                alert("Time has already passed!")
-                return
-            }
+            // if(differenceInMs<0)
+            // {
+            //     alert("Time has already passed!")
+            //     return
+            // }
 
             document.getElementById('off').style.opacity="0";
             document.getElementById('on').style.opacity="1";
@@ -103,21 +127,22 @@
                 var i=0;
                 quiz()
             
-            },differenceInMs)
+            },1000)
         }
-
         function quiz()
         {
             snum.innerHTML=count+1+".";
             ans.value=""
-            num1.innerHTML = Math.floor(Math.random() *10)
-            num2.innerHTML = Math.floor(Math.random() *1)
+            num1.innerHTML = Math.floor(Math.random() *100)
+            num2.innerHTML = Math.floor(Math.random() *100)
+            selectedOperator = Math.floor(Math.random()*operators.length)
+            sign.innerHTML = operators[selectedOperator].sign
         }
         var count=0
         function checkAnswer()
             {   
                 console.log('check')
-                if(ans.value==Number(num1.innerHTML)+Number(num2.innerHTML))
+                if(ans.value==operators[selectedOperator].ans(Number(num1.innerHTML),Number(num2.innerHTML)))
                 {
                     count++;
                     console.log(count)
@@ -142,6 +167,14 @@
             document.getElementById('on').style.opacity="0";
             document.getElementById('container').style.borderColor="#ff105e";
             x.pause();
+        }
+
+        function demo(){
+            var level = document.getElementById('level')
+            if(level.selectedIndex==0)
+            alert('noob')
+            else
+            alert('no')
         }
     </script>
 </body>
