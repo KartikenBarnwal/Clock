@@ -43,6 +43,21 @@ ul li a:hover{
     width: 60vw;
     height: 25vw;
 }
+.container span{
+    position: absolute;
+    top: 25%;
+    left: 49%;
+    color: snow;
+    font-size: 3rem;
+}
+.container p{
+    position: absolute;
+    top: 110%;
+    left: 25%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    color: snow;
+}
 input{
     text-align: center;
     font-size: 3rem;
