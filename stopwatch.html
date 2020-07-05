@@ -4,6 +4,24 @@
     <title>Clock</title>
     <link rel="icon" href="https://lh3.googleusercontent.com/a-/AOh14GhOePmZG8g0wja3nBL_o7igPEyY8svB8UQuXjC4Gg=s120-cc-rg" type="image/icon type">
     <link rel="stylesheet" href="stopwatch.css">
+    
+</head>
+<body>
+    <ul>    
+        <li><a href="index.html">Analog</a></li>
+        <li><a href="stopwatch.html" class="activated">Stopwatch</a></li>
+        <li><a href="alarm.html">Alarm</a></li>
+    </ul>
+    <div id="container">
+        <h1 id="time"><span id="min">00</span>:<span id="sec">00</span>:<span id="deci">00</span></h1>
+    </div>
+    <div id="buttondiv">
+        <button id="start" onclick="timestart()">Start</button>
+        <button id="stop" onclick="timestop()">Stop</button>
+        <button id="reset" onclick="timereset()">Reset</button>
+    </div>
+    <img src="run.gif" alt="" id="run" style="opacity: 0;">
+    <img src="stop.png" alt="" id="static" style="opacity: 0;">
     <script>
         var iddeci=0;
         var idsec=0;
@@ -11,11 +29,14 @@
         var deci=1;
         var sec=1;
         var min=1;
+        var run = document.getElementById('run')
+        var static = document.getElementById('static')
         function timestart()
         {
+            run.style.opacity="1"
+            static.style.opacity="0"
             idsec=setInterval(framesec,10*100);
             iddeci=setInterval(framedeci,10);
-            
             idmin=setInterval(framemin,10*100*60+100);
         }
         function framedeci()
@@ -77,12 +98,16 @@
         }
         function timestop()
         {
+            run.style.opacity="0"
+            static.style.opacity="1"
             clearInterval(iddeci);
             clearInterval(idsec);
             clearInterval(idmin);
         }
         function timereset()
         {
+            run.style.opacity="0"
+            static.style.opacity="1"
             timestop();
             document.getElementById("min").innerHTML="00"; 
             min=0;
@@ -92,21 +117,5 @@
             sec=0;
         }
     </script>
-</head>
-<body>
-    <ul>    
-        <li><a href="index.html">Analog</a></li>
-        <li><a href="stopwatch.html" class="activated">Stopwatch</a></li>
-        <li><a href="alarm.html">Alarm</a></li>
-    </ul>
-    <div id="container">
-        <h1 id="time"><span id="min">00</span>:<span id="sec">00</span>:<span id="deci">00</span></h1>
-    </div>
-    <div id="buttondiv">
-        <button id="start" onclick="timestart()">Start</button>
-        <button id="stop" onclick="timestop()">Stop</button>
-        <button id="reset" onclick="timereset()">Reset</button>
-    </div>
-    
 </body>
 </html>
