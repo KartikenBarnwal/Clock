@@ -156,6 +156,10 @@ input{
 }
 .setlevel marquee{
     font-size: 3rem;
+    transition: .6s ease;
+}
+.setlevel #normal,#challenging{
+    margin-top: -20%;
 }
 #check{
     font-family: 'Courier New', Courier, monospace;
